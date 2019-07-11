@@ -1,14 +1,28 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgba(0, 0, 255, 0.1);
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0px; }
 
 a {
   color: #00b7ff; }
+
+.indexwrapper {
+  display: flex; }
+
+.topic {
+  font-size: 15px;
+  font-weight: 800; }
+
+.linkcontainer {
+  display: flex;
+  justify-content: center; }
+
+.linkset {
+  font-size: 100px; }
 
 .userC {
   font-size: 8px;
@@ -21,13 +35,21 @@ a {
   position: relative; }
 
 .drag {
-  position: relative; }
+  position: relative;
+  background-color: rgba(0, 0, 255, 0.3);
+  border: 2px solid magenta;
+  width: 150px;
+  cursor: grab; }
+
+.comment-button {
+  margin-bottom: 10px; }
 
 .drag4 {
   width: 4vw; }
 
 .drag2 {
-  width: 4vw; }
+  width: 4vw;
+  cursor: grab; }
 
 .drag3 {
   width: 4vw;
@@ -44,10 +66,6 @@ a {
   width: 100px;
   height: 50px;
   color: white; }
-
-.linkset {
-  position: absolute;
-  top: 1200px; }
 
 #addscroll {
   top: 100px;
@@ -69,6 +87,12 @@ a {
   width: 20vw;
   border: 1px solid black; }
 
+.bodyrendering {
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  bottom: 0px; }
+
 .image {
   width: 70vw;
   height: 60vh;
@@ -87,6 +111,16 @@ a {
   z-index: 0;
   bottom: 20px; }
 
+.indexbox {
+  display: flex;
+  justify-content: left;
+  margin: 10px; }
+
+.image img {
+  position: absolute;
+  left: 0;
+  bottom: 0; }
+
 .rendering {
   width: 100%;
   position: relative; }
@@ -100,5 +134,25 @@ a {
   display: flex;
   justify-content: flex-start;
   width: 100%; }
+
+#cosmos {
+  box-shadow: 0 0 3vw rgba(0, 0, 0, 0.5) inset;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  pointer-events: none; }
+
+#universe {
+  background-color: #e6e6e6;
+  display: block;
+  width: 100%;
+  position: fixed; }
+
+.grid {
+  z-index: -100;
+  position: absolute;
+  left: -15; }
 
 /*# sourceMappingURL=style.css.map */

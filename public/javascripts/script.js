@@ -67,6 +67,10 @@ document.addEventListener(
   false
 );
 
+$(".drag2").click(function() {
+  $(this).hide();
+});
+
 var animation = bodymovin.loadAnimation({
   container: document.getElementById("bm"),
   renderer: "svg",

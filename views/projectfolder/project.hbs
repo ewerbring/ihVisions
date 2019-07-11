@@ -1,3 +1,9 @@
+<div class="body-wrapper">
+
+  <img class="bodyrendering" src={{data.imageUrl}} alt="">
+
+</div>
+
 <div style="  box-sizing: border-box; width:100vw; height:100vh; overflow-x: hidden;">
   <nav>
     <a href="/">Home</a>
@@ -6,6 +12,8 @@
     <a href="/auth/logout">Logout</a>
     <a href="/project/list">Project index</a>
   </nav>
+
+
 
 
   <div class="container">
@@ -30,10 +38,7 @@
 
 
       </div>
-      <div class="image">
-        <img class="rendering" src={{data.imageUrl}} alt="">
 
-      </div>
 
     </div>
 
@@ -54,10 +59,10 @@
 
 
   {{#each data.comments}}
+
   <div class="drag" id="{{_id}}" style="left:{{xposition}}px; top:{{yposition}}px">
 
-
-    <p><b class="userC">{{_user.username}}:</b><br>{{topic}} </p>
+    <p class="topic">{{topic}} </p>
     <p>{{comment}}</p>
 
     <form action="/project/subcomment/{{_id}}" method="post">
@@ -67,6 +72,7 @@
       <input type="text" name="subcomment" id="response">
       <button type="submit">respond</button>
   </div>
+
   </form>
 
   {{/each}}

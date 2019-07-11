@@ -9,40 +9,51 @@
 
 
 
-<h1>{{title}}</h1>
+<h1>Ongoing Projects</h1>
 
-
-<ul>
-    {{#each data}}
-    <li><a href="/project/{{_id}}">{{name}}<br><img class="thumb" src={{imageUrl}} alt=""></a></li>
-    {{/each}}
-</ul>
-
-<p>Add your own project to discuss! Fill in these fields:</p>
-
-<form action="/project" method="POST">
-    <label for="name">Project name: </label>
-    <input type="text" name="name" id="name"><br>
-    <label for="city">City: </label>
-    <input type="text" name="city" id="city"><br>
-    <label for="street">Street: </label>
-    <input type="text" name="street" id="street"><br>
-    <label for="img">Image URL: </label>
-    <input type="text" name="img" id="img"><br>
-    <label for="info">About the project: </label>
+<div class="indexwrapper">
     <span>
-        <input type="text" name="infoLink" id="infoLink"><br>
-        <input type="text" name="infoLink" id="infoLink"><br>
-        <input type="text" name="infoLink" id="infoLink"><br>
+        <ul>
+            {{#each data}}
+            <div class="indexbox">
+                <span>
+                    <img class="thumb" src={{imageUrl}} alt="">
+                </span>
+                <span>
+                    <li><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
+                    </li>
+                </span>
+            </div>
+            {{/each}}
+        </ul>
     </span>
-    <label for="latitude">Latitude: </label>
-    <input type="number" step="any" name="latitude" id="latitude"><br>
-    <label for="longitude">Longitude: </label>
-    <input type="number" step="any" name="longitude" id="longitude"><br>
-    <button type="submit">Add new project</button>
-</form>
-<div id='map' style='width: 45vw; height: 60vh; margin:50px auto;'></div>
 
+    <span>
+        <p>Add your own project to discuss! Fill in these fields:</p>
+        <form action="/project" method="POST">
+            <label for="name">Project name: </label>
+            <input type="text" name="name" id="name"><br>
+            <label for="city">City: </label>
+            <input type="text" name="city" id="city"><br>
+            <label for="street">Street: </label>
+            <input type="text" name="street" id="street"><br>
+            <label for="img">Image URL: </label>
+            <input type="text" name="img" id="img"><br>
+            <label for="info">About the project: </label>
+            <span>
+                <input type="text" name="infoLink" id="infoLink"><br>
+                <input type="text" name="infoLink" id="infoLink"><br>
+                <input type="text" name="infoLink" id="infoLink"><br>
+            </span>
+            <label for="latitude">Latitude: </label>
+            <input type="number" step="any" name="latitude" id="latitude"><br>
+            <label for="longitude">Longitude: </label>
+            <input type="number" step="any" name="longitude" id="longitude"><br>
+            <button type="submit">Add new project</button>
+        </form>
+    </span>
+    <span id='map' style='width: 45vw; height: 80vh;'></span>
+</div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
     var map = new mapboxgl.Map({

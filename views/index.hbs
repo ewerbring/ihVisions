@@ -12,7 +12,21 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
-<body>
+<body class="">
+
+    <div class="grid">
+        <svg xmlns="http://www.w3.org/2000/svg" id='universe' width=100vw height=100vh
+            {{!-- onmousemove='mouseTrack(event)'> --}} </svg> <div id='cosmos'></div>
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="/javascripts/visionsbilder.js"></script>
+    <script type="text/javascript" src="/javascripts/grid.js"></script>
+
 
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
@@ -20,55 +34,53 @@
 
 
 
-    <body class="red">
 
-        <div id="bm"></div>
+    <div id="bm"></div>
 
-        <button id="addscroll">enable scroll</button>
-        <div id="bg" class="inline actionset">
+    <button id="addscroll">enable scroll</button>
+    <div id="bg" class="inline actionset">
 
-        </div>
-        <div class="linkset">
-
-            <h1>{{title}}</h1>
-            <p>Welcome to {{title}}</p>
+    </div>
+    <div class="linkset">
+        <div class="linkcontainer">
             <a href="/auth/login">Login</a>
             <a href="/auth/signup">Signup</a>
         </div>
+    </div>
 
 
-        {{!-- <a href="/">Home</a> --}}
+    {{!-- <a href="/">Home</a> --}}
 
-        {{!-- <a href="/auth/logout">Logout</a>
+    {{!-- <a href="/auth/logout">Logout</a>
         <a href="/project/list">Inside Project (comment)</a> --}}
 
 
 
 
-        <script src="../public/javascripts/script.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
-            </script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
-            </script>
+    <script src="../public/javascripts/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
+        </script>
 
-        <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
-            type="text/css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.5/lottie.min.js"></script>
-        <script src="/javascripts/script.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
-            </script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
-            </script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.5/lottie.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
+        </script>
 
-        <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
-            type="text/css" />
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
 
-    </body>
+</body>
 
 </html>
