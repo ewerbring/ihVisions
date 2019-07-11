@@ -1,5 +1,109 @@
+@font-face {
+  font-family: "Favorit Medium Lining";
+  src: url("Favorit-MediumLining.woff2") format("woff2"),
+    url("Favorit-MediumLining.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit Light Lining";
+  src: url("Favorit-LightLining.woff2") format("woff2"),
+    url("Favorit-LightLining.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-RegularItalic.woff2") format("woff2"),
+    url("Favorit-RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Favorit Bold Lining";
+  src: url("Favorit-BoldLining.woff2") format("woff2"),
+    url("Favorit-BoldLining.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-Regular.woff2") format("woff2"),
+    url("Favorit-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-Light.woff2") format("woff2"),
+    url("Favorit-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-MediumItalic.woff2") format("woff2"),
+    url("Favorit-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-LightItalic.woff2") format("woff2"),
+    url("Favorit-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-BoldItalic.woff2") format("woff2"),
+    url("Favorit-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Favorit Regular Lining";
+  src: url("Favorit-RegularLining.woff2") format("woff2"),
+    url("Favorit-RegularLining.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-Bold.woff2") format("woff2"),
+    url("Favorit-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-MonoBeta.woff2") format("woff2"),
+    url("Favorit-MonoBeta.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url("Favorit-Medium.woff2") format("woff2"),
+    url("Favorit-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Favorit Medium", Helvetica, Arial, sans-serif;
   // display: grid;
   // justify-items: center;
   background-color: rgba($color: blue, $alpha: 0.1);
@@ -50,9 +154,11 @@ a {
 .drag {
   position: relative;
   background-color: rgba($color: blue, $alpha: 0.3);
-  border: 2px solid magenta;
   width: 150px;
   cursor: grab;
+
+  height: auto;
+  border: 2px solid magenta;
 }
 
 .comment-button {
@@ -109,11 +215,22 @@ a {
 }
 ////images
 
+.body-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .bodyrendering {
-  width: 100%;
+  width: 80%;
   position: absolute;
   z-index: -10;
-  bottom: 0px;
+  border: 10px solid blue;
+  margin-top: 20px;
+  box-shadow: 5px 5px 50px rgba($color: blue, $alpha: 0.1);
+}
+
+.maprendering {
+  border: 10px solid blue;
+  box-shadow: 5px 5px 50px rgba($color: blue, $alpha: 0.5);
 }
 .image {
   width: 70vw;
@@ -133,7 +250,7 @@ a {
   height: 40vh;
   justify-content: center;
   z-index: 0;
-  bottom: 20px;
+  bottom: 0px;
 }
 
 .indexbox {
