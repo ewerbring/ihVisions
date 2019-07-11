@@ -1,0 +1,70 @@
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/auth/logout">Logout</a>
+    <a href="/project/list">Project Index</a>
+</nav>
+
+
+
+<h1>{{title}}</h1>
+
+<BUTTON class="btn-success"></BUTTON>
+
+<ul>
+    {{#each data}}
+    <li><a href="/project/{{_id}}">{{name}}<br><img class="thumb" src={{imageUrl}} alt=""></a></li>
+    {{/each}}
+</ul>
+<div id='map' style='width: 45vw; height: 60vh; margin:50px auto;'></div>
+
+<p>Add your own project to discuss! Fill in these fields:</p>
+
+<form action="/project" method="POST">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name"><br>
+    <label for="img">Image: </label>
+    <input type="text" name="img" id="img"><br>
+    <label for="info">Relevant Info: </label>
+    <span>
+        <input type="text" name="infoLink" id="infoLink"><br>
+        <input type="text" name="infoLink" id="infoLink"><br>
+        <input type="text" name="infoLink" id="infoLink"><br>
+    </span>
+    <label for="latitude">Latitude: </label>
+    <input type="number" step="any" name="latitude" id="latitude"><br>
+    <label for="longitude">Longitude: </label>
+    <input type="number" step="any" name="longitude" id="longitude"><br>
+    <button type="submit">Add new project</button>
+</form>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v9'
+    });
+
+    axios.get('http://localhost:3000/api/wonders').then(response => {
+        console.log(response.data)
+        const wonders = response.data;
+
+        wonders.forEach(wonder => {
+            const coordinates = wonder.location.coordinates.reverse();
+
+            let popup = new mapboxgl.Popup({ offset: 0, className: 'my-class' })
+                .setHTML(`<div class="popup"><p>${wonder.name}</p><img height="50px" src="${wonder.imageUrl}" alt=""></div>`)
+                .setMaxWidth("none")
+
+            let marker = new mapboxgl.Marker().setLngLat(coordinates).setPopup(popup).addTo(map);
+        })
+
+    }).catch(err => {
+        console.log(err)
+    })
+
+
+
+</script>

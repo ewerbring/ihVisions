@@ -1,0 +1,128 @@
+<nav>
+  <a href="/">Home</a>
+  <a href="/auth/login">Login</a>
+  <a href="/auth/signup">Signup</a>
+  <a href="/auth/logout">Logout</a>
+  <a href="/project/list">Project index</a>
+</nav>
+
+<h1>{{data.name}}</h1>
+<p>Welcome to {{data.name}}</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <p>Welcome to</P>
+      {{#each data.infoLink}}
+      <a href="http://{{info}}">hello</a></p>
+      {{/each}}
+
+
+      <form class="form" action="/project/comment/{{data._id}}" method="post">
+        <label for="topic">TOPIC</label><br>
+        <input type="text" name="topic" id="topic">
+        <br><br>
+        <label for="comment">COMMENT</label><br>
+        <input type="text" name="comment" id="comment">
+        <br><br>
+        <button type="submit">Submit new comment</button>
+      </form>
+
+
+    </div>
+    <div class="col-3">
+      <img class="rendering" src={{data.imageUrl}} alt="">
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="imagebox">
+  {{#each data.people}}
+  {{!-- 
+  {{../userId}}
+  {{_user._id}} --}}
+  <img class="drag2" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
+    alt="">
+  {{/each}}
+</div>
+
+
+
+
+{{#each data.comments}}
+<div class="drag box sb3" id="{{_id}}" style="left:{{xposition}}px; top:{{yposition}}px">
+
+
+  <p><b class="userC">{{_user.username}}:</b><br>{{topic}} </p>
+  <p>{{comment}}</p>
+
+  <form action="/project/subcomment/{{_id}}" method="post">
+    {{#each this.subcomment }}
+    <p class="subcomment"><b class="userC"></b>{{_user.username}} responded:<br>{{subcomment}}</p>
+    {{/each}}
+    <input type="text" name="subcomment" id="response">
+    <button type="submit">respond</button>
+</div>
+</form>
+
+{{/each}}
+
+
+
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
+  </script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+  type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.5/lottie.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous">
+  </script>
+
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet"
+  type="text/css" />
+
+
+
+
+{{!-- {{#each data.people}} --}}
+
+{{!-- {{#if (eq ../userId _user._id)}}
+  <img class="drag2" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
+    alt=""> --}}
+{{!-- {{else if (eq val2 val3)}}
+  <p>ELSE IF Branch</p> --}}
+{{!-- {{else}}
+  <img class="drag" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
+    alt="">
+  {{/if}} --}}
+
+{{!-- {{#ifCond ../userId  _user._id}}
+  <img class="drag2" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
+    alt="">
+  {{else}}
+  <img class="drag4" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
+    alt="">
+  {{/ifCond}} --}}
+
+{{!-- {{#ifDiff ../userId _user._id}}
+  <img class="drag4" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
+    alt="">
+  {{/ifDiff}} --}}
+
+{{!-- {{/each}} --}}

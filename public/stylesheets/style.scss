@@ -1,0 +1,107 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  // display: grid;
+  // justify-items: center;
+  background-color: rgba($color: blue, $alpha: 0.1);
+  width: 100vw;
+  box-sizing: border-box;
+  // background-color: black;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.userC {
+  font-size: 8px;
+  color: white;
+  opacity: 0.5;
+}
+
+.subcomment {
+  color: white;
+  left: 20px;
+  position: relative;
+}
+
+.drag {
+  position: relative;
+}
+
+.drag4 {
+  width: 4vw;
+}
+.drag2 {
+  width: 4vw;
+}
+.drag3 {
+  width: 4vw;
+  position: relative;
+}
+
+.imagebox {
+  position: absolute;
+  top: 350px;
+  width: 100vw;
+  height: 60vh;
+  justify-content: flex-start;
+  z-index: 0;
+}
+
+.rendering {
+  width: 200px;
+  position: relative;
+}
+
+.inline {
+  display: inline-block;
+}
+.red {
+  overflow: hidden;
+}
+.actionset > div {
+  background: black;
+  width: 100px;
+  height: 50px;
+  color: white;
+}
+
+.linkset {
+  position: absolute;
+  top: 1200px;
+}
+
+#addscroll {
+  top: 100px;
+  width: 150px;
+  height: 250px;
+  position: absolute;
+  border: none;
+  opacity: 0;
+  cursor: help;
+}
+
+.thumb {
+  width: 100px;
+}
+
+.form {
+  z-index: 10;
+  position: relative;
+}
+
+.col-3 {
+  border: 1px solid black;
+}
+
+.row {
+  width: 100vw;
+  left: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
