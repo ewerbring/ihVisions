@@ -37,7 +37,7 @@ router.get("/:id", (req, res, next) => {
 router.post("/", (req, res, next) => {
   const { name, city, street, img, latitude, longitude, infoLink } = req.body;
 
-  const people = Array.from({ length: 17 }).map((_, i) => {
+  const people = Array.from({ length: 19 }).map((_, i) => {
     return {
       imgPath: `images/${i + 1}Arkiv.png`
       // _user: req.user._id

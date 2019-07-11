@@ -112,20 +112,31 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   margin: 0px;
+  color: #60c56f;
   // background-color: black;
 }
 
 a {
-  color: #00b7ff;
+  color: #60c56f;
 }
 
 ///grid
 
 .indexwrapper {
   display: flex;
+  font-size: 10px;
+  color: black;
 }
 ////Typografi
 
+.indexlist {
+  width: 15vw;
+  line-height: 30px;
+}
+
+.indexform {
+  width: 15vw;
+}
 .topic {
   font-size: 15px;
   font-weight: 800;
@@ -152,13 +163,18 @@ a {
 }
 
 .drag {
-  position: relative;
+  position: absolute;
   background-color: rgba($color: blue, $alpha: 0.3);
   width: 150px;
   cursor: grab;
-
+  top: 100px;
+  left: 40vw;
   height: auto;
   border: 2px solid magenta;
+}
+
+.draghidden {
+  display: none;
 }
 
 .comment-button {
@@ -191,12 +207,13 @@ a {
 }
 
 #addscroll {
-  top: 100px;
+  top: 70px;
+  left: 150px;
   width: 150px;
   height: 250px;
   position: absolute;
   border: none;
-  opacity: 0;
+  opacity: 0.4;
   cursor: help;
 }
 
@@ -223,7 +240,7 @@ a {
   width: 80%;
   position: absolute;
   z-index: -10;
-  border: 10px solid blue;
+  border: 10px solid #60c56f;
   margin-top: 20px;
   box-shadow: 5px 5px 50px rgba($color: blue, $alpha: 0.1);
 }
@@ -257,6 +274,8 @@ a {
   display: flex;
   justify-content: left;
   margin: 10px;
+  font-size: 10px;
+  color: black;
 }
 
 .image img {

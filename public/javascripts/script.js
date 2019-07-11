@@ -59,6 +59,10 @@ $("#addscroll").click(function() {
   $("body").addClass("red");
 });
 
+$(".drag").click(function() {
+  $("drag").addClass("draghidden");
+});
+
 document.addEventListener(
   "DOMContentLoaded",
   () => {
@@ -67,9 +71,9 @@ document.addEventListener(
   false
 );
 
-$(".drag2").click(function() {
-  $(this).hide();
-});
+// $(".drag2").click(function() {
+//   $(this).hide();
+// });
 
 var animation = bodymovin.loadAnimation({
   container: document.getElementById("bm"),

@@ -20,7 +20,7 @@
                     <img class="thumb" src={{imageUrl}} alt="">
                 </span>
                 <span>
-                    <li><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
+                    <li class="indexlist"><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
                     </li>
                 </span>
             </div>
@@ -30,7 +30,7 @@
 
     <span>
         <p>Add your own project to discuss! Fill in these fields:</p>
-        <form action="/project" method="POST">
+        <form class="indexform" action="/project" method="POST">
             <label for="name">Project name: </label>
             <input type="text" name="name" id="name"><br>
             <label for="city">City: </label>
