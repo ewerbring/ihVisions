@@ -56,7 +56,7 @@ $("#myform").append(inputdrag);
 ////first page
 
 $("#addscroll").click(function() {
-  $("body").removeClass("red");
+  $("body").addClass("red");
 });
 
 document.addEventListener(

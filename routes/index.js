@@ -22,10 +22,12 @@ router.get("/api/wonders", (req, res, next) => {
 });
 
 router.post("/wonders", (req, res, next) => {
-  const { name, img, latitude, longitude } = req.body;
+  const { name, img, city, street, latitude, longitude } = req.body;
 
   Place.create({
     name,
+    city,
+    street,
     imageUrl: img,
     location: {
       type: "Point",

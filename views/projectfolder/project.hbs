@@ -1,77 +1,77 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/auth/login">Login</a>
-  <a href="/auth/signup">Signup</a>
-  <a href="/auth/logout">Logout</a>
-  <a href="/project/list">Project index</a>
-</nav>
-
-<h1>{{data.name}}</h1>
-<p>Welcome to {{data.name}}</p>
-
-<div class="container">
-  <div class="row">
-    <div class="col-5">
-      <p>Welcome to</P>
-      {{#each data.infoLink}}
-      <a href="http://{{info}}">hello</a></p>
-      {{/each}}
+<div style="  box-sizing: border-box; width:100vw; height:100vh; overflow-x: hidden;">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/auth/login">Login</a>
+    <a href="/auth/signup">Signup</a>
+    <a href="/auth/logout">Logout</a>
+    <a href="/project/list">Project index</a>
+  </nav>
 
 
-      <form class="form" action="/project/comment/{{data._id}}" method="post">
-        <label for="topic">TOPIC</label><br>
-        <input type="text" name="topic" id="topic">
-        <br><br>
-        <label for="comment">COMMENT</label><br>
-        <input type="text" name="comment" id="comment">
-        <br><br>
-        <button type="submit">Submit new comment</button>
-      </form>
+  <div class="container">
+    <div class="row">
+      <div class="info">
+        <h1>{{data.name}}</h1>
+        <p>{{data.city}}</p>
+        <p>{{data.street}}</p>
+        <p>{{data.infoLink}}</p>
 
 
-    </div>
-    <div class="col-3">
-      <img class="rendering" src={{data.imageUrl}} alt="">
+
+        <form class="form" action="/project/comment/{{data._id}}" method="post">
+          <label for="topic">TOPIC</label><br>
+          <input type="text" name="topic" id="topic">
+          <br><br>
+          <label for="comment">COMMENT</label><br>
+          <input type="text" name="comment" id="comment">
+          <br><br>
+          <button type="submit">Submit new comment</button>
+        </form>
+
+
+      </div>
+      <div class="image">
+        <img class="rendering" src={{data.imageUrl}} alt="">
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
-
-
-<div class="imagebox">
-  {{#each data.people}}
-  {{!-- 
+  <div class="img-wrapper">
+    <div class="peoplebox">
+      {{#each data.people}}
+      {{!-- 
   {{../userId}}
   {{_user._id}} --}}
-  <img class="drag2" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}" width='60px'
-    alt="">
+      <img class="drag2" style="left:{{xposition}}px; top:{{yposition}}px" id={{_id}} src="../../{{imgPath}}"
+        width='60px' alt="">
+      {{/each}}
+    </div>
+
+  </div>
+
+
+  {{#each data.comments}}
+  <div class="drag" id="{{_id}}" style="left:{{xposition}}px; top:{{yposition}}px">
+
+
+    <p><b class="userC">{{_user.username}}:</b><br>{{topic}} </p>
+    <p>{{comment}}</p>
+
+    <form action="/project/subcomment/{{_id}}" method="post">
+      {{#each this.subcomment }}
+      <p class="subcomment"><b class="userC"></b>{{_user.username}} responded:<br>{{subcomment}}</p>
+      {{/each}}
+      <input type="text" name="subcomment" id="response">
+      <button type="submit">respond</button>
+  </div>
+  </form>
+
   {{/each}}
+
 </div>
-
-
-
-
-{{#each data.comments}}
-<div class="drag box sb3" id="{{_id}}" style="left:{{xposition}}px; top:{{yposition}}px">
-
-
-  <p><b class="userC">{{_user.username}}:</b><br>{{topic}} </p>
-  <p>{{comment}}</p>
-
-  <form action="/project/subcomment/{{_id}}" method="post">
-    {{#each this.subcomment }}
-    <p class="subcomment"><b class="userC"></b>{{_user.username}} responded:<br>{{subcomment}}</p>
-    {{/each}}
-    <input type="text" name="subcomment" id="response">
-    <button type="submit">respond</button>
-</div>
-</form>
-
-{{/each}}
-
-
 
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.js'></script>

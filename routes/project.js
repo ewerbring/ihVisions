@@ -35,7 +35,7 @@ router.get("/:id", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  const { name, img, latitude, longitude, infoLink } = req.body;
+  const { name, city, street, img, latitude, longitude, infoLink } = req.body;
 
   const people = Array.from({ length: 17 }).map((_, i) => {
     return {
@@ -48,6 +48,8 @@ router.post("/", (req, res, next) => {
       const ids = dbPeople.map(el => el._id);
       return Place.create({
         name,
+        city,
+        street,
         imageUrl: img,
         infoLink,
         location: {

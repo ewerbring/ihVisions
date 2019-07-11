@@ -3,7 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgba(0, 0, 255, 0.1);
   width: 100vw;
-  box-sizing: border-box; }
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden; }
 
 a {
   color: #00b7ff; }
@@ -31,23 +33,11 @@ a {
   width: 4vw;
   position: relative; }
 
-.imagebox {
-  position: absolute;
-  top: 350px;
-  width: 100vw;
-  height: 60vh;
-  justify-content: flex-start;
-  z-index: 0; }
-
-.rendering {
-  width: 200px;
-  position: relative; }
-
 .inline {
   display: inline-block; }
 
 .red {
-  overflow: hidden; }
+  overflow-y: scroll; }
 
 .actionset > div {
   background: black;
@@ -75,10 +65,34 @@ a {
   z-index: 10;
   position: relative; }
 
-.col-3 {
+.info {
+  width: 20vw;
   border: 1px solid black; }
 
+.image {
+  width: 70vw;
+  height: 60vh;
+  border: 1px solid black;
+  overflow: hidden; }
+
+.img-wrapper {
+  display: flex;
+  justify-content: center; }
+
+.peoplebox {
+  position: absolute;
+  width: 100vw;
+  height: 40vh;
+  justify-content: center;
+  z-index: 0;
+  bottom: 20px; }
+
+.rendering {
+  width: 100%;
+  position: relative; }
+
 .row {
+  display: flex;
   width: 100vw;
   left: 0px; }
 

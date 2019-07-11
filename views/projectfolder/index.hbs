@@ -11,23 +11,25 @@
 
 <h1>{{title}}</h1>
 
-<BUTTON class="btn-success"></BUTTON>
 
 <ul>
     {{#each data}}
     <li><a href="/project/{{_id}}">{{name}}<br><img class="thumb" src={{imageUrl}} alt=""></a></li>
     {{/each}}
 </ul>
-<div id='map' style='width: 45vw; height: 60vh; margin:50px auto;'></div>
 
 <p>Add your own project to discuss! Fill in these fields:</p>
 
 <form action="/project" method="POST">
-    <label for="name">Name: </label>
+    <label for="name">Project name: </label>
     <input type="text" name="name" id="name"><br>
-    <label for="img">Image: </label>
+    <label for="city">City: </label>
+    <input type="text" name="city" id="city"><br>
+    <label for="street">Street: </label>
+    <input type="text" name="street" id="street"><br>
+    <label for="img">Image URL: </label>
     <input type="text" name="img" id="img"><br>
-    <label for="info">Relevant Info: </label>
+    <label for="info">About the project: </label>
     <span>
         <input type="text" name="infoLink" id="infoLink"><br>
         <input type="text" name="infoLink" id="infoLink"><br>
@@ -39,6 +41,7 @@
     <input type="number" step="any" name="longitude" id="longitude"><br>
     <button type="submit">Add new project</button>
 </form>
+<div id='map' style='width: 45vw; height: 60vh; margin:50px auto;'></div>
 
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';
