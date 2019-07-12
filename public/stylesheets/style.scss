@@ -157,8 +157,6 @@ nav {
 ///grid
 
 .centerwrapper {
-  display: flex;
-  justify-items: center;
   width: 100vw;
   height: 100vh;
 }
@@ -216,6 +214,15 @@ nav {
 }
 
 ////inputs
+
+.signlog {
+  width: 20vw;
+  height: 40px;
+  background-color: rgba($color: blue, $alpha: 0.4);
+  color: white;
+  margin: 10px;
+  font-size: 20px;
+}
 
 .projectinput {
   width: 20vw;
@@ -310,7 +317,7 @@ nav {
 }
 
 .thumb {
-  width: 100px;
+  width: 140px;
 }
 
 .form {

@@ -12,11 +12,11 @@
 
 
     <form action="/auth/signup" method="POST" id="form-container">
-      <input id="username" type="text" name="username" placeholder="JonSnow">
+      <input class="signlog" id="username" type="text" name="username" placeholder="JonSnow">
 
       <br><br>
 
-      <input id="password" type="password" name="password" placeholder="Your password">
+      <input class="signlog" id="password" type="password" name="password" placeholder="Your password">
       <br>
       {{#if message }}
       <div class="error-message">{{ message }}</div>
@@ -29,10 +29,7 @@
 
       {{!-- <img class="logingubbe" src="/images/3Arkiv.png"> --}}
 
-      <p class="account-message">
-        Do you already have an account?<br>
-        <a href="/auth/login">Login</a>
-      </p>
+
     </form>
 
   </div>

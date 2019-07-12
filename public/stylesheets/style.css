@@ -119,8 +119,6 @@ nav {
   border: none; }
 
 .centerwrapper {
-  display: flex;
-  justify-items: center;
   width: 100vw;
   height: 100vh; }
 
@@ -167,6 +165,14 @@ nav {
   font-size: 5rem;
   margin: 100px;
   text-decoration: none; }
+
+.signlog {
+  width: 20vw;
+  height: 40px;
+  background-color: rgba(0, 0, 255, 0.4);
+  color: white;
+  margin: 10px;
+  font-size: 20px; }
 
 .projectinput {
   width: 20vw;
@@ -251,7 +257,7 @@ nav {
   cursor: help; }
 
 .thumb {
-  width: 100px; }
+  width: 140px; }
 
 .form {
   z-index: 10;

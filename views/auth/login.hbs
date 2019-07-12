@@ -7,14 +7,14 @@
 
   <div class="loginwrapper">
 
-    <form action="/auth/login" method="POST" id="form-container">
+    <form class="logform" action="/auth/login" method="POST" id="form-container">
 
-      <input id="username" type="text" name="username" placeholder="JonSnow">
+      <input class="signlog" id="username" type="text" name="username" placeholder="JonSnow">
 
       <br><br>
 
 
-      <input id="password" type="password" name="password" placeholder="Your password">
+      <input class="signlog" id="password" type="password" name="password" placeholder="Your password">
       <br>
       {{#if message }}
       <div class="error-message">{{ message }}</div>
@@ -25,11 +25,8 @@
       </button>
 
       {{!-- <img class="logingubbe" src="/images/3Arkiv.png"> --}}
-      <p class="account-message">
-        Don't have an account yet?<br>
-        <a href="/auth/signup">Signup</a>
-      </p>
+
     </form>
 
-  </div>
-</div>
+    </input>
+    </input>
