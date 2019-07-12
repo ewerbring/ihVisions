@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "Favorit";
+  font-family: "Favorit Regular";
   src: url("Favorit-Regular.woff2") format("woff2"),
     url("Favorit-Regular.woff") format("woff");
   font-weight: normal;
@@ -116,16 +116,60 @@ body {
   // background-color: black;
 }
 
-a {
-  color: #60c56f;
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+  font-family: "Favorit Regular Lining";
+}
+a:hover {
+  font-family: "Favorit Regular";
 }
 
+nav {
+  z-index: 50;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: black;
+  font-size: 20px;
+}
+
+///button
+
+#hide {
+  position: absolute;
+  z-index: 40;
+  top: 0;
+}
+
+.logbutton {
+  background-color: transparent;
+  border: none;
+}
 ///grid
 
+.centerwrapper {
+  display: flex;
+  justify-items: center;
+  width: 100vw;
+  height: 100vh;
+}
 .indexwrapper {
   display: flex;
+  justify-content: center;
+  width: 100vw;
+
   font-size: 10px;
   color: black;
+  top: 10vh;
+  position: relative;
+}
+
+.loginwrapper {
+  left: 40vw;
+  top: 30vh;
+  position: relative;
 }
 ////Typografi
 
@@ -135,8 +179,20 @@ a {
 }
 
 .indexform {
-  width: 15vw;
+  width: 27vw;
+  margin: 20px;
+  margin-top: 0px;
 }
+
+.indexbox {
+  display: flex;
+  justify-content: left;
+  margin: 10px;
+  font-size: 10px;
+  color: black;
+  width: 27vw;
+}
+
 .topic {
   font-size: 15px;
   font-weight: 800;
@@ -148,6 +204,24 @@ a {
 }
 .linkset {
   font-size: 100px;
+  margin: 100px;
+  text-decoration: none;
+}
+
+////inputs
+
+.projectinput {
+  width: 20vw;
+  height: 40px;
+  background-color: rgba($color: blue, $alpha: 0.4);
+  color: white;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.projectinput::placeholder {
+  color: white;
+  opacity: 0.4;
 }
 
 .userC {
@@ -213,7 +287,7 @@ a {
   height: 250px;
   position: absolute;
   border: none;
-  opacity: 0.4;
+  opacity: 0;
   cursor: help;
 }
 
@@ -226,23 +300,48 @@ a {
   position: relative;
 }
 
-.info {
-  width: 20vw;
-  border: 1px solid black;
-}
 ////images
+.submitgubbe {
+  height: 200px;
+  position: relative;
+}
 
+.transparent {
+  background-color: transparent;
+}
+
+.logingubbe {
+  height: 200px;
+  position: relative;
+}
 .body-wrapper {
   display: flex;
   justify-content: center;
 }
+
+.image-wrapper {
+  position: relative;
+  height: 20vh;
+  border: 5px solid red;
+  top: 70px;
+  left: 10vw;
+  width: 70vw;
+  height: 60vh;
+  overflow: hidden;
+  box-shadow: 5px 5px 50px rgba($color: red, $alpha: 0.5);
+}
+
+.body-wrapper img {
+  max-height: initial;
+}
+
 .bodyrendering {
-  width: 80%;
   position: absolute;
   z-index: -10;
-  border: 10px solid #60c56f;
-  margin-top: 20px;
-  box-shadow: 5px 5px 50px rgba($color: blue, $alpha: 0.1);
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  margin-top: 100px;
 }
 
 .maprendering {
@@ -257,6 +356,7 @@ a {
 }
 
 .img-wrapper {
+  width: 100vw;
   display: flex;
   justify-content: center;
 }
@@ -268,14 +368,6 @@ a {
   justify-content: center;
   z-index: 0;
   bottom: 0px;
-}
-
-.indexbox {
-  display: flex;
-  justify-content: left;
-  margin: 10px;
-  font-size: 10px;
-  color: black;
 }
 
 .image img {
@@ -296,7 +388,19 @@ a {
 .container {
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  width: 15vw;
+  border: 1px solid black;
+  top: 70px;
+  position: absolute;
+  color: black;
+  padding: 20px;
+  padding-top: 0px;
+  line-height: 10px;
+  font-size: 20px;
+}
+
+.info {
+  width: 20vw;
 }
 
 #cosmos {

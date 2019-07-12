@@ -4,6 +4,10 @@ const Place = require("../models/Place");
 const Comment = require("../models/Discussion");
 const Subcomment = require("../models/Subcomment");
 const People = require("../models/People");
+var geo = require("mapbox-geocoding");
+geo.setAccessToken(
+  "pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA"
+);
 
 /* GET home page */
 router.get("/list", (req, res, next) => {
@@ -28,7 +32,6 @@ router.get("/:id", (req, res, next) => {
       { path: "people", model: "People" }
     ])
     .then(data => {
-      console.log(data);
       res.render("projectfolder/project", { data: data, userId: req.user._id });
     })
     .catch(err => console.log("catching", err));
@@ -43,9 +46,10 @@ router.post("/", (req, res, next) => {
       // _user: req.user._id
     };
   });
-  People.insertMany(people)
-    .then(dbPeople => {
-      const ids = dbPeople.map(el => el._id);
+
+  People.insertMany(people).then(dbPeople => {
+    const ids = dbPeople.map(el => el._id);
+    geo.geocode("mapbox.places", `${city}  ${street}`, function(err, geoData) {
       return Place.create({
         name,
         city,
@@ -54,17 +58,18 @@ router.post("/", (req, res, next) => {
         infoLink,
         location: {
           type: "Point",
-          coordinates: [latitude, longitude]
+          coordinates: [...geoData.features[0].center.reverse()]
         },
         people: ids
-      });
-    })
-    .then(() => {
-      res.redirect("/project/list");
-    })
-    .catch(err => {
-      next(err);
+      })
+        .then(() => {
+          res.redirect("/project/list");
+        })
+        .catch(err => {
+          next(err);
+        });
     });
+  });
 });
 
 ////POST COMMENTS

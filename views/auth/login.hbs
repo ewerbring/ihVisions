@@ -3,28 +3,33 @@
   <a href="/auth/signup">Signup</a>
   <a href="/auth/logout">Logout</a>
 </nav>
+<div class="centerwrapper">
 
-<h2>Login</h2>
+  <div class="loginwrapper">
 
-<form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
+    <form action="/auth/login" method="POST" id="form-container">
 
-  <br><br>
+      <input id="username" type="text" name="username" placeholder="JonSnow">
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+      <br><br>
 
-  <br><br>
 
-  <button>Login</button>
+      <input id="password" type="password" name="password" placeholder="Your password">
+      <br>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-  <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/signup">Signup</a>
-  </p>
-</form>
+      <br><br>
+      <button class="">LOGIN
+      </button>
+
+      {{!-- <img class="logingubbe" src="/images/3Arkiv.png"> --}}
+      <p class="account-message">
+        Don't have an account yet?<br>
+        <a href="/auth/signup">Signup</a>
+      </p>
+    </form>
+
+  </div>
+</div>

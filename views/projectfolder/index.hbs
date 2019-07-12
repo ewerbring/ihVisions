@@ -4,55 +4,59 @@
 <nav>
     <a href="/">Home</a>
     <a href="/auth/logout">Logout</a>
-    <a href="/project/list">Project Index</a>
+    <a href="/project/list">Index</a>
 </nav>
 
 
 
-<h1>Ongoing Projects</h1>
 
 <div class="indexwrapper">
-    <span>
-        <ul>
-            {{#each data}}
-            <div class="indexbox">
-                <span>
-                    <img class="thumb" src={{imageUrl}} alt="">
-                </span>
-                <span>
-                    <li class="indexlist"><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
-                    </li>
-                </span>
-            </div>
-            {{/each}}
-        </ul>
-    </span>
+
+
+
+    <form class="indexform" action="/project" method="POST">
+
+        <input class="projectinput" type="text" name="name" id="name" placeholder="Project name"><br>
+
+        <input class="projectinput" type="text" name="city" id="city" placeholder="City"><br>
+
+        <input class="projectinput" type="text" name="street" id="street" placeholder="Street Adress"><br>
+
+        <input class="projectinput" type="text" name="img" id="img" placeholder="Image URL"><br>
+
+
+        <span>
+            <input class="projectinput" type="text" name="infoLink" id="infoLink" placeholder="additional info"><br>
+            <input class="projectinput" type="text" name="infoLink" id="infoLink" placeholder="additional info"><br>
+            <input class="projectinput" type="text" name="infoLink" id="infoLink" placeholder="additional info"><br>
+        </span>
+
+        <p>Add your own project to discuss! Fill in these fields:</p>
+        <button class="logbutton" type="submit"><img class="submitgubbe" src="/images/3Arkiv.png"></button>
+    </form>
+
+    <span id='map' class="maprendering" style='width: 45vw; height: 80vh;'></span>
 
     <span>
-        <p>Add your own project to discuss! Fill in these fields:</p>
-        <form class="indexform" action="/project" method="POST">
-            <label for="name">Project name: </label>
-            <input type="text" name="name" id="name"><br>
-            <label for="city">City: </label>
-            <input type="text" name="city" id="city"><br>
-            <label for="street">Street: </label>
-            <input type="text" name="street" id="street"><br>
-            <label for="img">Image URL: </label>
-            <input type="text" name="img" id="img"><br>
-            <label for="info">About the project: </label>
-            <span>
-                <input type="text" name="infoLink" id="infoLink"><br>
-                <input type="text" name="infoLink" id="infoLink"><br>
-                <input type="text" name="infoLink" id="infoLink"><br>
-            </span>
-            <label for="latitude">Latitude: </label>
-            <input type="number" step="any" name="latitude" id="latitude"><br>
-            <label for="longitude">Longitude: </label>
-            <input type="number" step="any" name="longitude" id="longitude"><br>
-            <button type="submit">Add new project</button>
-        </form>
+
+
+
+        <span>
+            <ul>
+                {{#each data}}
+                <div class="indexbox">
+                    <span>
+                        <img class="thumb" src={{imageUrl}} alt="">
+                    </span>
+                    <span>
+                        <li class="indexlist"><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
+                        </li>
+                    </span>
+                </div>
+                {{/each}}
+            </ul>
+        </span>
     </span>
-    <span id='map' class="maprendering" style='width: 45vw; height: 80vh;'></span>
 </div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nbWluc2hlbmciLCJhIjoiY2pydDhjMjlwMXhpaDN5cHMxcjNya2ZmbyJ9.Tc5kmo0vZ1VKJbLK83OloA';

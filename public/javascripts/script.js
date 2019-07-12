@@ -10,6 +10,10 @@ document.addEventListener(
 
 var dragposition = "";
 
+$("#hide").click(function() {
+  $(".drag").toggle();
+});
+
 $(".drag2").draggable({
   // other options...
   drag: function(event, ui) {
@@ -57,10 +61,6 @@ $("#myform").append(inputdrag);
 
 $("#addscroll").click(function() {
   $("body").addClass("red");
-});
-
-$(".drag").click(function() {
-  $("drag").addClass("draghidden");
 });
 
 document.addEventListener(

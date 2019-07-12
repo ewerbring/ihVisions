@@ -1,7 +1,9 @@
 <div class="body-wrapper">
 
-  <img class="bodyrendering" src={{data.imageUrl}} alt="">
+  <div class="image-wrapper">
 
+    <img class="bodyrendering" src={{data.imageUrl}} alt="">
+  </div>
 </div>
 
 <div style="  box-sizing: border-box; width:100vw; height:100vh; overflow-x: hidden;">
@@ -13,13 +15,13 @@
     <a href="/project/list">Project index</a>
   </nav>
 
-
+  <button id="hide">Hide comments</button>
 
 
   <div class="container">
     <div class="row">
       <div class="info">
-        <h1>{{data.name}}</h1>
+        <p>{{data.name}}</p>
         <p>{{data.city}}</p>
         <p>{{data.street}}</p>
         <p>{{data.infoLink}}</p>
@@ -27,11 +29,9 @@
 
 
         <form class="form" action="/project/comment/{{data._id}}" method="post">
-          <label for="topic">TOPIC</label><br>
-          <input type="text" name="topic" id="topic">
+          <input class="projectinput" type="text" name="topic" id="topic" placeholder="Topic">
           <br><br>
-          <label for="comment">COMMENT</label><br>
-          <input type="text" name="comment" id="comment">
+          <input class="projectinput" type="text" name="comment" id="comment" placeholder="Comment">
           <br><br>
           <button type="submit">Submit new comment</button>
         </form>
