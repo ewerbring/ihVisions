@@ -116,6 +116,14 @@ body {
   // background-color: black;
 }
 
+button {
+  font-family: "Favorit";
+  border-radius: 0px;
+  height: 30px;
+  width: 100px;
+  margin-top: 20px;
+}
+
 a,
 a:visited {
   color: black;
@@ -132,15 +140,14 @@ nav {
   top: 30px;
   left: 30px;
   color: black;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 ///button
 
 #hide {
-  position: absolute;
   z-index: 40;
-  top: 0;
+  position: relative;
 }
 
 .logbutton {
@@ -160,7 +167,7 @@ nav {
   justify-content: center;
   width: 100vw;
 
-  font-size: 10px;
+  font-size: 1rem;
   color: black;
   top: 10vh;
   position: relative;
@@ -188,13 +195,13 @@ nav {
   display: flex;
   justify-content: left;
   margin: 10px;
-  font-size: 10px;
+  font-size: 1rem;
   color: black;
   width: 27vw;
 }
 
 .topic {
-  font-size: 15px;
+  font-size: 1.2rem;
   font-weight: 800;
 }
 
@@ -203,7 +210,7 @@ nav {
   justify-content: center;
 }
 .linkset {
-  font-size: 100px;
+  font-size: 5rem;
   margin: 100px;
   text-decoration: none;
 }
@@ -227,27 +234,35 @@ nav {
   opacity: 0.4;
 }
 
-.userC {
-  font-size: 8px;
-  color: white;
-  opacity: 0.5;
-}
-
 .subcomment {
-  color: white;
+  color: rgba($color: black, $alpha: 0.7);
   left: 20px;
   position: relative;
+  font-size: 0.8rem;
 }
 
 .drag {
   position: absolute;
-  background-color: rgba($color: blue, $alpha: 0.3);
   width: 150px;
   cursor: grab;
   top: 100px;
   left: 40vw;
-  height: auto;
-  border: 2px solid magenta;
+  color: black;
+  padding: 10px;
+  padding-top: 0px;
+  line-height: 20px;
+  font-size: 1rem;
+  margin: 20px;
+  margin-top: 0px;
+  background-color: rgba($color: white, $alpha: 0.65);
+}
+.userC {
+  font-family: "Favorit Regular Lining";
+}
+
+.boxborder2 {
+  box-shadow: 5px 5px 30px rgba($color: red, $alpha: 0.2);
+  border: 2px solid red;
 }
 
 .draghidden {
@@ -359,14 +374,13 @@ nav {
 .img-wrapper {
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-items: center;
 }
 .peoplebox {
   position: absolute;
 
   width: 100vw;
   height: 40vh;
-  justify-content: center;
   z-index: 0;
   bottom: 0px;
 }

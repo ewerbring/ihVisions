@@ -12,10 +12,9 @@
     <a href="/auth/login">Login</a>
     <a href="/auth/signup">Signup</a>
     <a href="/auth/logout">Logout</a>
-    <a href="/project/list">Project index</a>
+    <a href="/project/list">Index</a>
   </nav>
 
-  <button id="hide">Hide comments</button>
 
 
   <div class="container boxborder">
@@ -42,8 +41,10 @@
           <br><br>
           <input class="projectinput projectinput2" type="text" name="comment" id="comment" placeholder="Comment">
           <br><br>
-          <button type="submit">Submit new comment</button>
+          <button style="margin-top: -60px;" type="submit">Submit new comment</button>
+
         </form>
+        <button id="hide">Hide comments</button>
 
 
       </div>
@@ -69,7 +70,7 @@
 
   {{#each data.comments}}
 
-  <div class="drag" id="{{_id}}" style="left:{{xposition}}px; top:{{yposition}}px">
+  <div class="drag boxborder2" id="{{_id}}" style="left:{{xposition}}px; top:{{yposition}}px">
 
     <p class="topic">{{topic}} </p>
     <p>{{comment}}</p>
@@ -80,6 +81,7 @@
       {{/each}}
       <input type="text" name="subcomment" id="response">
       <button type="submit">respond</button>
+
   </div>
 
   </form>
