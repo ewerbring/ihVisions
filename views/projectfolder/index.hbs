@@ -31,8 +31,10 @@
             <input class="projectinput" type="text" name="infoLink" id="infoLink" placeholder="additional info"><br>
         </span>
 
-        <p>Add your own project to discuss! Fill in these fields:</p>
-        <button class="logbutton" type="submit"><img class="submitgubbe" src="/images/3Arkiv.png"></button>
+        <button class="" type="submit">SUBMIT</button>
+        <div class="logbutton" type="submit"><img class="submitgubbe" style="top:100px; height: 150px;"
+                src="/images/3Arkiv.png">
+            <img class="submitgubbe" src="/images/bubble10.png"></div>
     </form>
 
     <span id='map' class="maprendering" style='width: 45vw; height: 80vh;'></span>
@@ -49,8 +51,10 @@
                         <img class="thumb" src={{imageUrl}} alt="">
                     </span>
                     <span>
-                        <li class="indexlist"><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
-                        </li>
+                        <ul>
+                            <li class="indexlist"><a href="/project/{{_id}}">{{city}}<br>{{street}}<br>{{name}}<br></a>
+                            </li>
+                        </ul>
                     </span>
                 </div>
                 {{/each}}

@@ -1,6 +1,6 @@
 <div class="body-wrapper">
 
-  <div class="image-wrapper">
+  <div class="image-wrapper boxborder">
 
     <img class="bodyrendering" src={{data.imageUrl}} alt="">
   </div>
@@ -18,20 +18,29 @@
   <button id="hide">Hide comments</button>
 
 
-  <div class="container">
+  <div class="container boxborder">
     <div class="row">
       <div class="info">
-        <p>{{data.name}}</p>
-        <p>{{data.city}}</p>
-        <p>{{data.street}}</p>
-        <p>{{data.infoLink}}</p>
-
+        <ul>
+          <li>
+            <p class="city">{{data.city}}</p>
+          </li>
+          <li>
+            <p>{{data.name}}</p>
+          </li>
+          <li>
+            <p>{{data.street}}</p>
+          </li>
+          <li>
+            <a href="{{data.infoLink}}">Related readings</a>
+          </li>
+        </ul>
 
 
         <form class="form" action="/project/comment/{{data._id}}" method="post">
-          <input class="projectinput" type="text" name="topic" id="topic" placeholder="Topic">
+          <input class="projectinput projectinput2" type="text" name="topic" id="topic" placeholder="Topic">
           <br><br>
-          <input class="projectinput" type="text" name="comment" id="comment" placeholder="Comment">
+          <input class="projectinput projectinput2" type="text" name="comment" id="comment" placeholder="Comment">
           <br><br>
           <button type="submit">Submit new comment</button>
         </form>
